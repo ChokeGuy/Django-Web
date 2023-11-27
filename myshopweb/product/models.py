@@ -31,6 +31,7 @@ class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Category")
     manufacturer_id = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, verbose_name="Manufacturer")
     status = models.IntegerField(default=0, blank= True )
+    quantity= models.IntegerField (blank=True)
     
     class Meta:
         ordering = ('id','name','price')
@@ -47,3 +48,4 @@ class Product(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('product:productdetails', kwargs={'pk': self.id})
+

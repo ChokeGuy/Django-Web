@@ -66,7 +66,6 @@
                         <a class="page-link" href="?page=1{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">First</a>
                     </li>
                 {% endif %}
-
                 {% for page_number in page_obj.paginator.page_range %}
                     {% if page_number <= page_obj.number|add:3 and page_number >= page_obj.number|add:-3 %}
                         {% if page_obj.number == page_number %}

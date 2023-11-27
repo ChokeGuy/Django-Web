@@ -23,7 +23,7 @@
       <h3 class="font-weight-light details-price"> {{product.price|floatformat:0|intcomma}} VNĐ </h3>
       <h4>
         {% if product.status == 0%}
-        <span class="badge badge-success">Còn Hàng</span>
+        <span class="badge badge-success">Còn {{product.quantity}} sản phẩm</span>
         {% else %}
         <span class="badge badge-danger">Hết hàng</span>
         {% endif %}
